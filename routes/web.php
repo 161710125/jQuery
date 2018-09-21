@@ -11,18 +11,9 @@
 |
 */
 
-Route::get('hehe', function () {
-    return view('welcome');
-});
-
-
-Route::get('hmm', function () {
-    return view('calculator.index');
-});
 
 Route::get('/', function () {
-    return view('tiket');
+    return view('data.index');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('kontak', 'DataController');
+Route::get('api', 'DataController@api')->name('api');
